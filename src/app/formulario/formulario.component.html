@@ -1,0 +1,44 @@
+<!-- centra el formulario en la pantalla -->
+<div class="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+
+  <p-card class="w-full max-w-xl shadow-2xl rounded-2xl" header="Formulario de Producto">
+
+    <!-- Creacion o actualización, dependiendo de la variable edit -->
+    <form [formGroup]="formProducto" (ngSubmit)="edit ? updateProducto() : createProducto()" class="form-producto">
+      <!-- Campo de nombre -->
+      <div class="campo-form">
+        <label for="nombre" class="font-medium text-gray-700">Nombre</label>
+        <!-- Campo de entrada de texto para el nombre del producto -->
+        <input id="nombre" type="text" pInputText formControlName="nombre"
+          class="p-inputtext-sm px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500" />
+      </div>
+
+      <!-- Campo de descripción -->
+      <div class="campo-form">
+        <label for="descripcion" class="font-medium text-gray-700">Descripción</label>
+        <!-- Campo de entrada de texto para la descripcion del producto -->
+        <input id="descripcion" type="text" pInputText formControlName="descripcion"
+          class="p-inputtext-sm px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500" />
+      </div>
+
+      <!-- Campo de precio -->
+      <div class="campo-form">
+        <label for="precio" class="font-medium text-gray-700">Precio</label>
+        <!-- Campo de numero con control decimal para el precio del producto -->
+        <p-input-number inputId="precio" formControlName="precio" mode="decimal" [min]="0" [showButtons]="true"
+          class="p-inputnumber-sm p-inputnumber-rounded border border-gray-300 focus:ring-2 focus:ring-indigo-500"></p-input-number>
+      </div>
+
+      <div class="botones-formulario">
+        <!-- Boton de guardar alineado a la izquierda -->
+        <p-button label="Guardar" icon="pi pi-save" [loading]="isSaveInProgress" type="submit"></p-button>
+
+        <!-- Boton de cancelar alineado a la derecha -->
+        <p-button label="Cancelar" icon="pi pi-times" styleClass="p-button-secondary" (click)="cancelar()"
+          type="button"></p-button>
+      </div>
+
+
+    </form>
+  </p-card>
+</div>

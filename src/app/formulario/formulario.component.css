@@ -1,0 +1,29 @@
+/* Clase para el formulario */
+.form-producto {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  width: 400px;
+  margin-right: auto;
+}
+
+/* Clase para los campos de entrada */
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Ajustes para el botón */
+.flex.justify-end {
+  margin-top: 16px;
+}
+
+/* Contenedor de los botones del formulario */
+.botones-formulario {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+}

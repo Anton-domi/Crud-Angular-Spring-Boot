@@ -1,0 +1,85 @@
+@import "primeicons/primeicons.css";
+
+.header-principal {
+  width: 100%;
+  background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #d97706;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.header-principal:hover {
+  background: linear-gradient(90deg, #fcd34d 0%, #fbbf24 100%);
+}
+
+.titulo-principal {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 16px;
+}
+
+.barra-acciones-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-agregar {
+  margin-right: 24px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-busqueda {
+  border-radius: 15px;
+  padding: 12px 18px;
+  font-size: 16px;
+  text-align: center;
+  min-width: 200px;
+}
+
+.btn-buscar,
+.btn-limpiar {
+  margin-top: -10px;
+}
+
+.acciones-producto {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-eliminar,
+.btn-editar {
+  margin-right: 12px;
+  text-align: center;
+}
+
+.icono-agregar,
+.icono-buscar,
+.icono-limpiar,
+.icono-eliminar,
+.icono-editar {
+  margin-right: auto;
+
+}

@@ -1,0 +1,60 @@
+<header class="header-principal">
+  <h1 class="titulo-principal">Gestión de Productos</h1>
+</header>
+
+<!-- Barra de Acciones -->
+<div class="barra-acciones-principal ">
+  <a routerLink="formulario/new" class="p-button p-button-success btn-agregar">
+    <i class="pi pi-plus icono-agregar"></i> Agregar
+  </a>
+
+  <div class="search-container">
+    <!-- Campo de Busqueda -->
+    <input type="text" [(ngModel)]="busqueda" placeholder="Buscar" class="input-busqueda" />
+
+    <!-- Boton de Buscar -->
+    <button pButton type="button" class="p-button-sm btn-buscar" (click)="buscar()">
+      <i class="pi pi-search icono-buscar"></i>
+    </button>
+
+    <!-- Boton de Limpiar -->
+    <button pButton type="button" class="p-button-sm p-button-secondary btn-limpiar" (click)="limpiarBusqueda()">
+      <i class="pi pi-eraser icono-limpiar"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Paginacion -->
+<p-table [value]="productosFiltrados" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5, 10, 20]"
+  [responsiveLayout]="'scroll'" class="tabla-productos">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-producto>
+    <tr>
+      <td>{{ producto.id }}</td>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>${{ producto.precio }}</td>
+      <td>
+        <div class="acciones-producto">
+          <button pButton type="button" class="p-button-danger p-button-sm btn-eliminar"
+            (click)="deleteProducto(producto.id)">
+            <i class="pi pi-trash icono-eliminar"></i>
+          </button>
+          <a [routerLink]="'formulario/' + producto.id" class="p-button p-button-info p-button-sm btn-editar"
+            style="text-decoration: none;">
+            <i class="pi pi-pencil icono-editar"></i>
+          </a>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
